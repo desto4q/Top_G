@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./App.scss"
 import WebFont from 'webfontloader'
 import Router from './router/Router'
@@ -9,7 +9,14 @@ function App() {
     }
   })
 
-  
+useEffect(()=> {
+  let a = document.querySelectorAll("a")
+  a.forEach((itm)=>{
+    itm.addEventListener("click",(e)=>{
+      e.preventDefault()
+    })
+  })
+},[])
   return (
     <div className="app">
       <Router/>

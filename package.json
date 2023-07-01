@@ -1,5 +1,5 @@
 {
-  "name": "sui-clone",
+  "name": "Top_G",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "date-and-time": "^3.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1",
+    "react-simple-star-rating": "^5.1.7",
     "sass": "^1.62.1",
     "webfontloader": "^1.6.28"
   },
