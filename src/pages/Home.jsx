@@ -6,6 +6,7 @@ import { hero, sect2 } from '../data/data'
 import ImageCont from '../components/ImageCont'
 import Card from '../components/Card'
 import NFT_View from '../components/NFT_View'
+import Top_artist from '../components/Top_artist'
 
 function Home() {
 
@@ -31,12 +32,12 @@ function Home() {
         <ImageCont />
         <Hero h2={sect2.h2} p={sect2.p} buttons={sect2.buttons}/>
       </section>
-      <section>
+      <section className='nft_view_section'>
         {/* <Card/> */}
         <NFT_View/>
       </section>
-      <section>
-        
+      <section className='top_artist_section'>
+        <Top_artist/>
       </section>
 
     </div>

@@ -24,7 +24,7 @@ function Card( {username,fullname,avatar,price,image,rating,product_name,}) {
       <div className="container">
         <User avatar={avatar} displayname={username} fullname={fullname} />
         <div className="content_img">
-          <img src={image && image} alt="" />
+          <img src={image && image} loading='lazy' alt="" />
         </div>
 
         <div className="title">

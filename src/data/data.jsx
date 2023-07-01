@@ -49,9 +49,26 @@ let createRandomDetails = ( )=> {
 
     }
     
-    console.log(randomName)
     return randomName
 }
 
 
 export const Personel = faker.helpers.multiple(createRandomDetails, {count:6})
+
+
+let Artist = () => {
+    let artist = {
+        fullname: faker.person.fullName(),
+        avatar:  faker.internet.avatar(),
+        userName: faker.internet.userName(),
+        bg: faker.image.urlLoremFlickr({category: "abstract" }),
+        items: faker.number.float({max:5,precision: 0.1}),
+        owners: faker.number.float({max:5,precision: 0.1}),
+        traded: faker.number.float({max:5,precision: 0.1}),
+   
+    }
+    return artist
+}
+
+
+export const Artist_list = faker.helpers.multiple(Artist,{count:20})
