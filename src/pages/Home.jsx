@@ -2,7 +2,7 @@ import React from 'react'
 import Nav from '../components/Nav'
 import Grainy from '../components/grainy'
 import Hero from '../components/Hero'
-import { hero, sect2 } from '../data/data'
+import { explore, hero, sect2 } from '../data/data'
 import ImageCont from '../components/ImageCont'
 import Card from '../components/Card'
 import NFT_View from '../components/NFT_View'
@@ -39,7 +39,13 @@ function Home() {
       <section className='top_artist_section'>
         <Top_artist/>
       </section>
-
+      <section>
+        <Hero h2={explore.h2} p={explore.p} buttons={explore.buttons}/>
+        <ImageCont/>
+      </section>
+      <section>
+        
+      </section>
     </div>
   )
 }

@@ -37,38 +37,72 @@ export let sect2 = {
 
 
 
-let createRandomDetails = ( )=> {
+let createRandomDetails = () => {
     let randomName = {
         fullname: faker.person.fullName(),
         username: faker.internet.userName(),
-        avatar:  faker.internet.avatar(),
-        image: faker.image.urlLoremFlickr({category: "abstract"}),
-        rating : faker.number.float({max:5,precision: 0.1}),
+        avatar: faker.internet.avatar(),
+        image: faker.image.urlLoremFlickr({ category: "abstract" }),
+        rating: faker.number.float({ max: 5, precision: 0.1 }),
         product_name: faker.commerce.product(),
         price: faker.commerce.price()
 
     }
-    
+
     return randomName
 }
 
 
-export const Personel = faker.helpers.multiple(createRandomDetails, {count:6})
+
+export const Personel = faker.helpers.multiple(createRandomDetails, { count: 6 })
 
 
 let Artist = () => {
     let artist = {
         fullname: faker.person.fullName(),
-        avatar:  faker.internet.avatar(),
+        avatar: faker.internet.avatar(),
         userName: faker.internet.userName(),
-        bg: faker.image.urlLoremFlickr({category: "abstract" }),
-        items: faker.number.float({max:5,precision: 0.1}),
-        owners: faker.number.float({max:5,precision: 0.1}),
-        traded: faker.number.float({max:5,precision: 0.1}),
-   
+        bg: faker.image.urlLoremFlickr({ category: "abstract" }),
+        items: faker.number.float({ max: 5, precision: 0.1 }),
+        owners: faker.number.float({ max: 5, precision: 0.1 }),
+        traded: faker.number.float({ max: 5, precision: 0.1 }),
+
     }
     return artist
 }
 
 
-export const Artist_list = faker.helpers.multiple(Artist,{count:20})
+export let explore = {
+    h2: "Enviromental Impact of NFTs.",
+    p: "NFT's give us a way to have a clear ownership over digital items. Consider how they are the same and different from a physical object",
+    buttons: [
+        {
+            name: "Explore Now",
+            type: ""
+        }
+
+    ]
+}
+
+
+export const Artist_list = faker.helpers.multiple(Artist, { count: 20 })
+
+
+export let footer_content = [
+    {
+        title: "Resources",
+        tile: [
+            "All Nfs",
+            "Customize",
+            "Utilize",
+            "Connect Wallet"]
+    },
+    {
+        title: "Company",
+        tile: [
+            "Help Center",
+            "Terms of Service",
+            "Privacy Policy"
+        ]
+    },
+]

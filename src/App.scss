@@ -102,8 +102,8 @@ body::after {
             margin: auto;
             width: 20px;
             height: 4px;
-            background: linear-gradient(to right, $color2, $color3);
-            border-radius: 1px;
+            background: linear-gradient(to left, $color2, $color3);
+            border-radius: 2px;
             opacity: 0;
             transition: 0.5s ease;
         }
@@ -478,7 +478,7 @@ section {
     padding: 2px;
     width: 100%;
     .my_carousel {
-        background-color: transparentize($color: $color3, $amount: .9);
+        // background-color: transparentize($color: $color3, $amount: .9);
         padding: 12px 4px;
         display: flex;
         flex-direction: column;
@@ -544,6 +544,7 @@ section {
             > img {
                 height: calc(70%);
                 width: 100%;
+                border-radius: 8px;
             }
             .info {
                 display: flex;
@@ -650,3 +651,81 @@ section {
 // section {
 //     background-color: green;
 // }
+
+footer {
+    width: 100%;
+    height:400px;
+    background-color: $color4;
+    border-top: 1px solid $color5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        .icon_content {
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap:12px;
+            * {
+                color: white;
+            }
+        }
+        .footer_content {
+            display: flex;
+            // flex-direction: column;
+            width: max-content;
+            gap: 44px;
+            justify-content: space-between;
+            .content {
+                max-width: 300px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                
+                * {
+                    color: white;
+                    font-weight: 500;
+                }
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+        .newsletter {
+            display: flex;
+            flex-direction: column;
+            gap:12px;
+            h2 {
+                color: white;
+            }
+            .input {
+                width: max-content;
+                height: 48px;
+                outline: 1px solid $inactive;
+                border-radius: 4px;
+                input {
+                    background: inherit;
+                    outline: none;
+                    border: none;
+                    width: 300px;
+                    padding: 4px;
+                    height: 100%;
+                }
+                button {
+                    height: 100%;
+                    padding: 4px 16px;
+                    background: linear-gradient(to right, $color3,$color2);
+                    color: white;
+                    outline: none;
+                    border: none;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+}
+
