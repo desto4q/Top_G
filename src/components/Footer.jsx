@@ -10,11 +10,12 @@ function Footer() {
                     <h2>logo</h2>
                     <p>Every Tree in the forest knows about creating value,and about reciprocity and about stewardship</p>
                 </div>
-                <div className='footer_content'>
-                    {footer_content.map(({ title, tile }) => {
-                        return (
+
+                {footer_content.map(({ title, tile }) => {
+                    return (
+                        <div className="footer_content">
+                            <h3>{title}</h3>
                             <div className="content">
-                                <h3>{title}</h3>
                                 {tile.map((item) => {
                                     return (
                                         <p>
@@ -23,10 +24,9 @@ function Footer() {
                                     )
                                 })}
                             </div>
-                        )
-                    })}
-
-                </div>
+                        </div>
+                    )
+                })}
                 <div className="newsletter">
                     <h2>Subscribe to our Newsletter</h2>
                     <div className="input">

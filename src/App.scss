@@ -16,35 +16,29 @@ $color5: #5282c7;
 ::-webkit-scrollbar {
     width: max-content;
     * {
-        transition:  0.2s ease;
+        transition: 0.2s ease;
     }
 }
 
 ::-webkit-scrollbar-track {
     background: $color4;
-    box-shadow: inset 0 0 5px black; 
+    box-shadow: inset 0 0 5px black;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: darken($color: $color2, $amount: 20);
     border-radius: 8px;
-    border: 4px  solid transparentize($color: white, $amount: 1);
+    border: 4px solid transparentize($color: white, $amount: 1);
     background-clip: padding-box;
 }
-
 
 ::-webkit-scrollbar-thumb:hover {
     background: darken($color: $color2, $amount: 0);
     border-radius: 8px;
-    border: 4px  solid transparentize($color: white, $amount: 1);
+    border: 4px solid transparentize($color: white, $amount: 1);
     background-clip: padding-box;
 }
-
-
-
-
-
 
 body {
     background-color: $color1;
@@ -62,24 +56,32 @@ body::after {
     content: "sos";
     pointer-events: none;
 }
+
+.nav_active {
+    background: transparentize($color: $color1, $amount: 0.7);
+    backdrop-filter: blur(4px);
+}
 .nav {
     display: flex;
     align-items: center;
     padding: 0 100px;
     height: 144px;
     // border-bottom: 2px solid $color2;
-    background: transparentize($color: $color1, $amount: 0.7);
+    // 
     position: relative;
     position: fixed;
     width: 100%;
     left: 0;
     top: 0;
-    backdrop-filter: blur(4px);
+    
     isolation: isolate;
     z-index: 10;
     .logo {
         color: white;
         font-size: 24px;
+    }
+    .ham {
+        margin-left: auto;
     }
     .links {
         display: flex;
@@ -144,7 +146,7 @@ body::after {
 
 section {
     // background-color: blue;
-    height: 100dvh;
+    height: 766px;
     display: flex;
     align-items: center;
     padding: 0 100px;
@@ -158,13 +160,71 @@ section {
 .Img_cont {
     width: 100%;
     max-width: 500px;
-    background-color: red;
+    aspect-ratio: 1/1;
+    // background-color: red;
     display: flex;
     justify-content: center;
-    height: 300px;
+    // height: 300px;
     min-width: 302px;
+    position: relative;
+    
+    .container {
+        $col2: transparentize($color4, 1);
+        transform: scale(1.4);
+        position: absolute;
+        mask-image: radial-gradient(#000, rgba(0, 0, 0, 0));
+        -webkit-mask-image: radial-gradient(
+            #000,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0)
+        );
+    }
+    .content {
+        width: 100%;
+        // background-color: red;
+        transform: scale(0.9);
+        img {
+            padding: 2px;
+            height: 100%;
+            transform: scale(1.2);
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .img {
+        height: 100%;
+        width: 100%;
+        padding: 2px;
+    }
 }
 
+.hero_cards {
+    height: 80%;
+    position: relative;
+    width: 100%;
+    // align-self: center;
+    img {
+        height: 100%;
+        position: absolute;
+        inset: 0;
+        width: max-content;
+        margin: auto;
+    }
+    img:nth-child(1) {
+        transform: translateY(100px)  rotate(20deg) skew(-20deg,-10deg);
+    }
+    img:nth-child(2) {
+        transform: translateY(0)  rotate(20deg) skew(-20deg,-10deg);
+    }
+    img:nth-child(3) {
+        transform: translateY(-100px)  rotate(20deg) skew(-20deg,-10deg);
+    }
+   
+    
+}
 .watermark {
     color: white;
     padding: 1px;
@@ -240,9 +300,6 @@ section {
     }
 }
 
-
-
-
 .section_2 {
     .hero {
         h1 {
@@ -281,7 +338,6 @@ section {
                 border-radius: 8px;
             }
         }
-        
     }
     .title {
         display: flex;
@@ -313,15 +369,13 @@ section {
                 font-weight: 500;
             }
         }
-
-           
     }
     .bid {
         display: flex;
         justify-content: space-between;
-        padding: 4px 12px;  
+        padding: 4px 12px;
         .bidding {
-            display: flex; 
+            display: flex;
             flex-direction: column;
             gap: 4px;
             height: 100%;
@@ -331,7 +385,7 @@ section {
                 color: $inactive;
             }
             h5 {
-                color:white;
+                color: white;
             }
         }
 
@@ -342,14 +396,12 @@ section {
             padding: 8px;
             border-radius: 2px;
             font-size: 12px;
-            background: linear-gradient(to right,$color3,$color2);
+            background: linear-gradient(to right, $color3, $color2);
         }
     }
     h5 {
         font-weight: 500;
     }
-    
-   
 }
 
 .button {
@@ -367,15 +419,12 @@ section {
     inset: 0 0;
     margin: auto;
     transform: scale(2);
-    
 }
-
-
 
 .user {
     display: flex;
     align-items: center;
-    gap: 8px; 
+    gap: 8px;
     // background-color: red;
     height: 62px;
     width: 100%;
@@ -402,10 +451,9 @@ section {
     img {
         height: 38px;
         width: 38px;
-        
+
         border-radius: 100%;
     }
-   
 }
 .nft_view_section {
     height: max-content;
@@ -414,7 +462,7 @@ section {
 .nft_view {
     display: flex;
     flex-direction: column;
-    gap:32px;
+    gap: 32px;
     // background-color: red;
     width: 100%;
     > .container {
@@ -443,7 +491,7 @@ section {
         align-self: center;
         justify-content: center;
         gap: 16px;
-        
+
         .nft_filter {
             color: white;
             font-weight: 500;
@@ -457,10 +505,9 @@ section {
         }
         .active {
             transition: 0.2s ease;
-            background: linear-gradient(to right, $color3,$color2);
+            background: linear-gradient(to right, $color3, $color2);
             outline: none;
         }
-
     }
 }
 
@@ -471,8 +518,6 @@ section {
     background-color: red;
     margin: 0px 4px;
 }
-
-
 
 .top_artist {
     padding: 2px;
@@ -498,7 +543,7 @@ section {
                 }
                 p {
                     font-size: 12px;
-                    color: lighten($color: $inactive, $amount: 20) ;
+                    color: lighten($color: $inactive, $amount: 20);
                 }
             }
             .buttons {
@@ -513,12 +558,11 @@ section {
                     font-size: 22px;
                     height: 48px;
                     aspect-ratio: 1/1;
-                    background: linear-gradient(to right, $color3,$color2);
+                    background: linear-gradient(to right, $color3, $color2);
                 }
             }
         }
     }
-    
 }
 
 .nft_hero {
@@ -557,7 +601,7 @@ section {
                 }
             }
 
-            .avatar{
+            .avatar {
                 position: absolute;
                 inset: 0;
                 // bottom: -0px;
@@ -591,7 +635,7 @@ section {
                 border-left: 2px solid $inactive;
                 margin: 0 auto;
             }
-            .text  {
+            .text {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -606,13 +650,12 @@ section {
             }
         }
     }
-
 }
 .nft_hero::before {
     background: linear-gradient(to bottom, $color3, $color2);
     content: "";
     position: absolute;
-    height: 100%;    
+    height: 100%;
     width: calc(100%);
     aspect-ratio: 1/1;
     border-radius: 100%;
@@ -622,8 +665,6 @@ section {
     margin: auto;
     transform: scale(2);
 }
-
-
 
 @keyframes rotate_gradient {
     0% {
@@ -643,7 +684,6 @@ section {
     }
 }
 
-
 // .top_artist_section {
 //     height: max-content;
 //     padding: 12px 0;
@@ -654,7 +694,7 @@ section {
 
 footer {
     width: 100%;
-    height:400px;
+    height: 400px;
     background-color: $color4;
     border-top: 1px solid $color5;
     display: flex;
@@ -665,32 +705,50 @@ footer {
         display: flex;
         width: 100%;
         justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 8px;
         .icon_content {
             max-width: 300px;
             display: flex;
             flex-direction: column;
-            gap:12px;
+            gap: 12px;
             * {
                 color: white;
             }
         }
         .footer_content {
             display: flex;
-            // flex-direction: column;
-            width: max-content;
-            gap: 44px;
-            justify-content: space-between;
+            flex-direction: column;
+            // width: max-content;
+            width: auto;
+            gap: 8px;
             .content {
-                max-width: 300px;
                 display: flex;
                 flex-direction: column;
-                gap: 12px;
-                
-                * {
-                    color: white;
-                    font-weight: 500;
-                }
+                gap: 4px;
             }
+            p {
+                margin-bottom: 4px;
+                color: $inactive;
+                cursor: pointer;
+                font-size: 16px !important;
+            }
+            * {
+                color: white;
+                font-weight: 500;
+            }
+            p:hover {
+                color: white;
+            }
+
+            // .content {
+            //     background-color: red;
+            //     max-width: 300px;
+            //     display: flex;
+            //     flex-direction: column;
+            //     gap: 12px;
+
+            // }
             p {
                 font-size: 14px;
             }
@@ -698,7 +756,7 @@ footer {
         .newsletter {
             display: flex;
             flex-direction: column;
-            gap:12px;
+            gap: 12px;
             h2 {
                 color: white;
             }
@@ -714,11 +772,12 @@ footer {
                     width: 300px;
                     padding: 4px;
                     height: 100%;
+                    color: white;
                 }
                 button {
                     height: 100%;
                     padding: 4px 16px;
-                    background: linear-gradient(to right, $color3,$color2);
+                    background: linear-gradient(to right, $color3, $color2);
                     color: white;
                     outline: none;
                     border: none;
@@ -728,4 +787,207 @@ footer {
         }
     }
 }
+.ham {
+    z-index: 10;
+}
+.logo {
+    z-index: 10;
+}
 
+.m_nav {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background-color: $color4;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    a {
+        font-size: 22px;
+        color: $inactive;
+    }
+    a:hover,
+    a:focus {
+        color: white;
+    }
+}
+
+.conclusion {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .c_card {
+        // position: absolute;
+        // width: 100%;
+        // height: 100%;
+        // background: linear-gradient(to right, $color3,$color2);
+        // // height: 400px;
+        // width: 200px;
+        // aspect-ratio: 9/16;
+        // inset: 0;
+        // margin: auto;
+        // content: "";
+        margin: auto;
+        // height: 400px;
+        max-width: 880px;
+        border-radius: 18px;
+        aspect-ratio: 22/10;
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, $color3, $color2);
+        // outline: 1px solid black;
+        display: flex;
+        justify-content: center;
+    }
+    .content {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        * {
+            color: white;
+        }
+        h2 {
+            font-size: 34px;
+        }
+
+        a {
+            height: 50px;
+            display: grid;
+            place-items: center;
+            aspect-ratio: 24/9;
+            font-size: 18px;
+            background-color: white;
+            border-radius: 4px;
+            color: $color3;
+            font-weight: 600;
+        }
+    }
+    .c_card:nth-child(2) {
+        opacity: 0.8;
+        transform: translateY(20px) scaleX(0.96);
+    }
+    .c_card:first-child {
+        transform: translateY(40px) scaleX(0.9);
+        opacity: 0.5;
+    }
+}
+
+.conc_section {
+    height: 766px;
+    padding: 12px 12px;
+}
+@media screen and (max-width: 1200px) {
+    .nav {
+        // background-color: red;
+        padding: 0 12px;
+    }
+    .conc_section {
+        height: 336px;
+        .conclusion {
+            .content {
+                max-width: 300px;
+                h2 {
+                    font-size: 22px;
+                }
+                p {
+                    font-size: 12px;
+                }
+                a {
+                    height: 30px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    section {
+        background-color: blue;
+        all: unset;
+        box-sizing: border-box;
+        padding: 0 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 44px;
+    }
+    section:nth-child(8) {
+        height: 100%;
+    }
+    .hero_section {
+        margin-top: 124px;
+    }
+    .section_2 {
+        flex-direction: column-reverse;
+    }
+
+    .nft_filters {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .nft_view {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 100%;
+        > .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px 10px;
+            place-items: center;
+        }
+    }
+    footer {
+        height: max-content;
+        padding: 14px 12px;
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .newsletter {
+            .input {
+                display: flex;
+                width: 300px !important;
+                input {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .carousel_info {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nft_view {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        // background-color: red;
+        width: 100%;
+        > .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px 10px;
+            place-items: center;
+        }
+    }
+}
+
+// debug
+// * {
+//     outline: 1px solid transparentize($color: red, $amount: .5);
+// }
